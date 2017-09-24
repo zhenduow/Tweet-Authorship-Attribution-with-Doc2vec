@@ -5,6 +5,8 @@ This model uses doc2vec as the embedding for a whole twitter post. Then it appli
 
 How to use:
 
+0. Install "gensim.models" and "keras" in python.
+
 1. Prepare a corpus as training set for doc2vec (name as ebd_train.txt & copy to current dir). The training set should consist of lines of tweets. One tweet per line, one line per tweet. 
 
 2. Prepare a test set for authorship attribution (name as (author_id).txt & copy to 'data' dir). The test set should consist of files with tweets sorted by author. One file per author, one author per file. In each file, there should be one line per tweet, one tweet per line.
