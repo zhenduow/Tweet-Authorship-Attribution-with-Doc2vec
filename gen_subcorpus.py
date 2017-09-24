@@ -9,7 +9,7 @@ import re
 author_num=1000
 text_num=200
 
-mergefiledir = os.getcwd()+'\\'+'svm_format_data'
+mergefiledir = os.getcwd()+'\\'+'clean'
 foldernames = os.listdir(mergefiledir)  
 
 author_list=[]
