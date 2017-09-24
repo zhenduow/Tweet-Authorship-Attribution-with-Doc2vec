@@ -11,19 +11,19 @@ How to use:
 
 3. Then run the scripts in the following order:
 
-	a. train_model.py
+	a. train_model.py.
 	This script uses gensim package to train doc2vec model with input corpus (ebd_train.txt) and save the model with the name "model".
 	
-	b. infer_test.py (will report a trivial error which does not affect normal use.)
+	b. infer_test.py. (will report a trivial error which does not affect normal use.)
 	This script import the doc2vec model trained by "train_model.py" and infer vector representation for the tweets in test set in "data" dir.
 	
-	c. clean.py
+	c. clean.py.
 	This script clean and format the vector representation in a format that can be directly used by sklearn.svm package.
 	
-	d. gen_clf_train_test.py
+	d. gen_clf_train_test.py.
 	This script randomly divide all the vector representations and generates training set and test set (training:test == 4:1) for classifier.
 	
-	e. cnn.py
+	e. cnn.py.
 	This script uses CNN classifier based on keras package to carry out the classification.
 
 4. Results are shown by classification accuracy.
