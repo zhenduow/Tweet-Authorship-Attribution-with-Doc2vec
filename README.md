@@ -9,7 +9,7 @@ How to use:
 2. Prepare a test set for authorship attribution (name as (author_id).txt & copy to 'data' dir). The test set should consist of files with tweets sorted by author. One file per author, one author per file. In each file, there should be one line per tweet, one tweet per line.
 3. Then run the scripts in the following order:
   a. train_model.py
-  b. infer_test.py
+  b. infer_test.py (will report a trivial error which does not affect normal use.)
   c. clean.py
   d. gen_clf_train_test.py
   e. cnn.py
