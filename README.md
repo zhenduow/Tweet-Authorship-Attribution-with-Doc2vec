@@ -7,8 +7,7 @@ How to use:
 
 0. Install "gensim.models" and "keras" in python.
 
-1. Prepare a corpus as training set for doc2vec (name as ebd_train.txt & copy to current dir). The training set should consist of lines of tweets. One tweet per line, one line per tweet. 
-
+1. Prepare a corpus as training set for doc2vec (name as ebd_train.txt & copy to current dir). The training set should consist of lines of tweets. One tweet per line, one line per tweet. I used a cleaned version of dataset in a previous work about AA on tweets (R. Schwartz, O. Tsur, A. Rappoport, and M. Koppel. 2013. Authorship attribution of micromessages). 
 2. Prepare a test set for authorship attribution (name as (author_id).txt & copy to 'data' dir). The test set should consist of files with tweets sorted by author. One file per author, one author per file. In each file, there should be one line per tweet, one tweet per line.
 
 3. Then run the scripts in the following order:
