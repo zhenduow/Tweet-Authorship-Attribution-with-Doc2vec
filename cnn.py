@@ -82,7 +82,7 @@ X_train = X_train.reshape((train_size,classification_dim,1))
 X_test = X_test.reshape((test_size,classification_dim,1))
 
 model = Sequential()
-model.add(Conv1D(2*ker_num, 2*ker_size, activation='relu',border_mode='same', input_shape=(classification_dim,1)))
+model.add(Conv1D(ker_num, ker_size, activation='relu',border_mode='same', input_shape=(classification_dim,1)))
 model.add(MaxPooling1D(2))
 #model.add(Conv1D(ker_num, ker_size, activation='relu',border_mode='same'))
 #model.add(MaxPooling1D(3))
