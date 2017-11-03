@@ -1,7 +1,10 @@
-#python example to train doc2vec model (with or without pre-trained word embeddings)
-
+# -*- coding:utf-8 -*-
 import gensim.models as g
 import logging
+
+'''
+Train the doc2vec model with the embedding training set and save the model.
+'''
 
 #doc2vec parameters
 vector_size = 300
