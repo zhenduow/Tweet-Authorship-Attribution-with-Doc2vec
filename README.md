@@ -15,16 +15,16 @@ A zip file named "sample_data.rar" is also included in the project. One can down
 3. Then run the scripts in the following order:
 
 	a. train_model.py.
-	This script uses gensim package to train doc2vec model with input corpus (ebd_train.txt) and save the model with the name "model".
+	This script uses gensim package to train doc2vec model with input corpus (ebd_train.txt) and save the model with the name "model". If you have a pretrained model in binary file, you can skip this step and rename your pretrained model as "model" and copy to the main dir.
 	
 	b. infer_test.py. (will report a trivial error which does not affect normal use.)
-	This script import the doc2vec model trained by "train_model.py" and infer vector representation for the tweets in test set in "data" dir.
+	This script imports the doc2vec model trained by "train_model.py" and infer vector representation for the tweets in test set in "data" dir. The test set is both the test set for doc2vec and the whole set for authorship attribution.
 	
 	c. clean.py.
-	This script clean and format the vector representation in a format that can be directly used by sklearn.svm package.
+	This script cleans and formats the vector representation in a format that can be directly used by libsvm package. 
 	
 	d. gen_clf_train_test.py.
-	This script randomly divide all the vector representations and generates training set and test set (training:test == 4:1) for classifier.
+	This script randomly samples a set with custom size (authornumber * tweetnumber) and divides the sample set into training set and test set (training:test == 4:1) for the classifier.
 	
 	e. cnn.py.
 	This script uses CNN classifier based on keras package to carry out the classification.
