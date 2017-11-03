@@ -1,13 +1,21 @@
 # -*- coding:utf-8 -*-  
 # file: FileMerage.py  
 #  
-  
+'''
+Split the docvec set into a training set and a test set.
+This step is equivalent to one test of manual cross validation.
+
+From the authorship attribution set, sample a set with customized (author_num*text_num).
+Then use 20% of the set as test, 80% as training.
+'''
+
 import os  
 import random
 import re
 
-author_num=100
-text_num=1000
+# customize the size of test size
+author_num = 50
+text_num = 1000
 
 mergefiledir = os.getcwd()+'\\'+'clean_embedding'
 foldernames = os.listdir(mergefiledir)  
@@ -17,7 +25,6 @@ for foldername in foldernames:
 	author_list.append(foldername)
 
 random_author_list = random.sample(author_list, author_num)
-
 
 output = open( 'random_subset.txt','w')  
 for author_name in random_author_list:
@@ -49,7 +56,6 @@ group_size=datasize/group_num
 for i in range(group_num):
 	group = lines[(i)*group_size:(i+1)*group_size]
 	all_data.append(group)
-
 	
 output_train = open( 'clf_train.txt','w')
 output_test = open( 'clf_test.txt','w')	
@@ -62,5 +68,3 @@ for i,group in enumerate(all_data):
 			output_test.writelines(line)
 output_train.close()
 output_test.close()
-
-
