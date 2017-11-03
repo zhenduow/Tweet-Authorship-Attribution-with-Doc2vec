@@ -1,14 +1,24 @@
 # -*- coding:utf-8 -*-  
 # file: FileMerage.py  
 #  
-  
+'''
+Generate the trainning set for doc2vec model.
+This training set is kept separated from the authorship attribution set.
+
+From the whole dataset, sample author_num many authors,
+	and then divide the set into group_size many even partitions.
+Then later one can use one or one combination of several partitions as 
+	authorship attribution set, others to train the doc2vec model.
+Each partition of the dataset is saved in one folder.
+Each partition set has (author_num/group_size) many authors and their tweets.
+'''
 import os  
 import random
 from shutil import copyfile
 
-author_num=7000
-group_num = 7
-group_size = author_num/group_num
+author_num = 7000
+group_size = 50
+group_num = author_num/test_size
 
 mergefiledir = os.getcwd()+'\\'+'data'
 author_names = os.listdir(mergefiledir)  
@@ -29,12 +39,10 @@ for i in range(group_num):
 	for author_name in group:
 		filename = mergefiledir + '\\'+ author_name
 		copyfile(filename, os.getcwd()+'\\'+'Sets'+'\\'+'Set_'+str(i+1)+'\\'+author_name)
-
-
-
+		
 output=open('ebd_train.txt','w')
 for i in range(group_num):
-	#if not i == 0:
+	if i > 0:
 		path = os.getcwd()+'\\'+'Sets'+'\\'+'Set_'+str(i+1)
 		filenames = os.listdir(path) 
 		for filename in filenames:
