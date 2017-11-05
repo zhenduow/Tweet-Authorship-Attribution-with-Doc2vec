@@ -18,7 +18,7 @@ from shutil import copyfile
 
 author_num = 7000
 group_size = 50
-group_num = author_num/test_size
+group_num = author_num/group_size
 
 mergefiledir = os.getcwd()+'\\'+'data'
 author_names = os.listdir(mergefiledir)  
